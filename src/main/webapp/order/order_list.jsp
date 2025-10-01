@@ -15,14 +15,13 @@
 }
 </style>
 <body>
-	<h1 id="header">주문 리스트</h1>
+	<a href="/flow"><h1 id="header">주문 리스트</h1></a>
 	<ul id="order-list-wrap">
 		
 	</ul>
 </body>
 <script type="text/javascript">
 	const orderList = JSON.parse(`${orderList}`);
-	console.log(orderList)
 	const ul = document.querySelector("#order-list-wrap")
 	const header = document.querySelector("#header")
 	
@@ -38,8 +37,5 @@
 			+ "</li>"	
 		)
 	})
-	
-	
-	
 </script>
 </html>

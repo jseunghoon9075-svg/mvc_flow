@@ -32,6 +32,10 @@ public class ProductDAO {
 	public void update(ProductVO productVO) {
 		sqlSession.update("product.update", productVO);
 	}
+	
+	public void delete(Long id) {
+		sqlSession.delete("product.delete", id);
+	}
 }
 
 

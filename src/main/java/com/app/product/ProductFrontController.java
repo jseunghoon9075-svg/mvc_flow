@@ -15,6 +15,7 @@ import com.app.member.controller.MemberLoginOkController;
 import com.app.member.controller.MemberLogoutOkController;
 import com.app.product.controller.ProductAddFrontController;
 import com.app.product.controller.ProductAddOkFrontController;
+import com.app.product.controller.ProductDeleteOkController;
 import com.app.product.controller.ProductEditController;
 import com.app.product.controller.ProductEditOkController;
 import com.app.product.controller.ProductListFrontController;
@@ -45,7 +46,8 @@ public class ProductFrontController extends HttpServlet{
 			result = new ProductListFrontController().execute(req, resp);
 		}else if(target.equals("read")){
 			result = new ProductReadController().execute(req, resp);
-		}else if(target.equals("remove-ok")){
+		}else if(target.equals("delete-ok")){
+			result = new ProductDeleteOkController().execute(req, resp);
 		}
 		
 		if(result != null) {

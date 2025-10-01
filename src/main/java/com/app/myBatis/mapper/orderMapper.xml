@@ -43,12 +43,16 @@
 		WHERE TBO.ID = #{memberId} 
 		ORDER BY TBO.ID DESC
 	</select>
-
-	<insert id="insert" parameterType="OrderVO">
-			INSERT INTO TBL_ORDER
-			VALUES(SEQ_ORDER.NEXTVAL, #{memberId}, #{productId}, #{productCount})
-	</insert>
 	
+	<insert id="insert" parameterType="OrderVO">
+		INSERT INTO TBL_ORDER
+		VALUES(SEQ_ORDER.NEXTVAL, #{memberId}, #{productId}, #{productCount})
+	</insert>
+	<delete id="delete" parameterType="Long">
+		DELETE
+		FROM TBL_ORDER
+		WHERE ID = #{id}
+	</delete>
 
 
 

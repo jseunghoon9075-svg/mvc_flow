@@ -31,7 +31,7 @@ public class ProductReadController implements Action {
 			req.setAttribute("message", "상품을 찾을 수 없습니다.");
 			result.setPath("/error.jsp");
 		}
-		result.setPath("/read.jsp");
+		result.setPath("/product/read.jsp");
 		return result;
 	}
 

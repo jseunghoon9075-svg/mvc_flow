@@ -14,13 +14,16 @@
 	<ul id="order-read-wrap">
 		
 	</ul>
+	<a class="remove-btn"><button>주문삭제</button></a>
 </body>
 <script type="text/javascript">
 	const productOne = JSON.parse(`${product}`)
-	console.log(productOne)
 	const ul = document.querySelector("#order-read-wrap")
+	const removeLink = document.querySelector(".remove-btn")
+	console.log(productOne)
 	
 	productOne.forEach((product) => {
+		removeLink.href = "/flow/remove-ok.order?id=" + product.id
 		ul.innerHTML += (
 				"<li>상품번호: " + product.productId + "</li>" +
 				"<li>상품명: " + product.productName + "</li>" +

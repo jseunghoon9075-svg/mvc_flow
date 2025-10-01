@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Result;
 import com.app.order.controller.OrderListController;
 import com.app.order.controller.OrderReadController;
+import com.app.order.controller.OrderRemoveOkController;
 import com.app.order.controller.OrderWriteCompleteController;
 import com.app.order.controller.OrderWriteOkController;
 
@@ -35,6 +36,7 @@ public class OrderFrontController extends HttpServlet{
 		}else if(target.equals("read")){
 			result = new OrderReadController().execute(req, resp);
 		}else if(target.equals("remove-ok")){
+			result = new OrderRemoveOkController().execute(req, resp);
 		}
 		
 		if(result != null) {

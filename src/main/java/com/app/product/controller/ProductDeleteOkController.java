@@ -9,26 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.ProductDAO;
-import com.app.exception.ProductExceptionController;
-import com.app.vo.ProductVO;
 
-public class ProductEditController implements Action {
+public class ProductDeleteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		ProductDAO productDAO = new ProductDAO();
 		Long id = Long.parseLong(req.getParameter("id"));
-
-		ProductVO foundProduct = productDAO.selectOne(id).orElseThrow(ProductExceptionController::new);
 		
-		try {
-			req.setAttribute("product", foundProduct);
-		} catch (ProductExceptionController e) {
-			req.setAttribute("message", "ProdcutEditController에서 예외발생");
-			result.setPath("/error.jsp");
-		}
-		result.setPath("/product/edit.jsp");
+		productDAO.delete(id);
+		
+		result.setRedirect(true);
+		result.setPath("/flow/list.product");
 		return result;
 	}
 

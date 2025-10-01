@@ -3,6 +3,7 @@ package com.app.dao;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.OrderDTO;
@@ -28,6 +29,10 @@ public class OrderDAO {
 	
 	public Optional<OrderDTO> select(Long id) {
 		return Optional.ofNullable(sqlSession.selectOne("order.select", id));
+	}
+	
+	public void delete(Long id) {
+		sqlSession.delete("order.delete", id);
 	}
 }
 
