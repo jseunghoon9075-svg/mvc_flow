@@ -27,7 +27,7 @@ public class ProductListFrontController implements Action {
 //		데이터를 가져온 ArrayList를 스트림객체로 바꾸고 맵을 이용해 JSONObject 로 객체를 변경후 JSONArray에 데이터 삽입
 		productDAO.selectAll().stream().map(JSONObject::new).forEach(productList::put);
 		req.setAttribute("productsList", productList);
-		result.setPath("/list.jsp");
+		result.setPath("/product/list.jsp");
 		return result;
 	}
 

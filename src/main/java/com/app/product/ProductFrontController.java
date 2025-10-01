@@ -45,7 +45,7 @@ public class ProductFrontController extends HttpServlet{
 			result = new ProductListFrontController().execute(req, resp);
 		}else if(target.equals("read")){
 			result = new ProductReadController().execute(req, resp);
-		}else if(target.equals("remove-ok")){	
+		}else if(target.equals("remove-ok")){
 		}
 		
 		if(result != null) {

@@ -10,7 +10,12 @@
 		FROM TBL_MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PASSWORD = #{memberPassword}
 	</select>
-
+				<!-- By붙히기 -->
+	<select id="selectIdByMemberEmail" parameterType="String" resultType="Long">
+		SELECT ID
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+	</select>
 
 
 
